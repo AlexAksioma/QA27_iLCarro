@@ -11,4 +11,10 @@ public class SplashTests extends AppiumConfig {
     public void validateVersionApp(){
         Assert.assertTrue(new SplashScreen(driver).validateVersionApp());
     }
+
+    @Test
+    public void splashScreenTimeTest(){
+        long expectedTime = 5000;
+        Assert.assertTrue(new SplashScreen(driver).validateSplashScreenToDisappear(expectedTime));
+    }
 }
