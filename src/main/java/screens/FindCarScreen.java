@@ -13,7 +13,11 @@ public class FindCarScreen extends BaseScreen{
 
     @FindBy(xpath = "//*[@text='Registration']")
     AndroidElement btnRegistration;
-    @FindBy(xpath = "/hierarchy/android.widget.Toast")
+    @FindBy(xpath = "//*[@text='Login']")
+    AndroidElement btnLogin;
+    @FindBy(xpath = "//*[@text='My Cars']")
+    AndroidElement btnMyCars;
+    @FindBy(xpath = "/hierarchy/android.widget.Toast")  //	/hierarchy/android.widget.Toast
     AndroidElement popUpMessageSuccess;
 
     public void goToRegistrationScreen(){
@@ -21,9 +25,22 @@ public class FindCarScreen extends BaseScreen{
         btnMoreOptions.click();
         btnRegistration.click();
     }
+    public void goToLoginScreen(){
+        //pause(3);
+        btnMoreOptions.click();
+        btnLogin.click();
+    }
+    public void goToMyCarScreen(){
+        //pause(3);
+        btnMoreOptions.click();
+        btnMyCars.click();
+    }
 
     public boolean validateMessageSuccess(){
         return textInElementPresent(popUpMessageSuccess, "Registration success!", 5);
+    }
+    public boolean validateMessageSuccess(String message){
+        return textInElementPresent(popUpMessageSuccess, message, 5);
     }
 
 }

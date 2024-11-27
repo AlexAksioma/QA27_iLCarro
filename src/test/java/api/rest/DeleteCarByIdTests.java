@@ -31,6 +31,7 @@ public class DeleteCarByIdTests extends CarController {
             System.out.println("successful add new car ser number --> "+car.getSerialNumber());
         }
     }
+
     @Test
     public void deleteCarPositiveTest(){
         Response response = deleteCar(car.getSerialNumber());
